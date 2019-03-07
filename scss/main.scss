@@ -1,6 +1,77 @@
-$primary-color: #444;
+@import "config";
+
+// box sizing property for all
+
+* {
+  box-sizing: border-box;
+}
 
 body {
+  @include background;
   background: $primary-color;
   color: white;
+  height: 100%;
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.5;
+}
+
+// Headings
+
+h1,
+h2,
+h3 {
+  margin: 0;
+  font-weight: 400;
+
+  // use & to have bahavior like h1.lg-heading
+  &.lg-heading {
+    font-size: 6rem; // multiplier of the default size
+  }
+
+  &.sm-heading {
+    margin-bottom: 2rem;
+    padding: 0.2rem 1rem;
+    background: lighten($color: $primary-color, $amount: 2); // should add rgba() function and opacity when there will be an imagel later
+  }
+}
+
+a {
+  color: white;
+  text-decoration: none;
+}
+
+header {
+  position: fixed; // where the menu button is, it should be all the top all the time
+  z-index: 2; // how close to you an element is (it'll be always up front) -- the bigger the number
+  width: 100%;
+}
+
+.text-secondary {
+  color: $secondary-color;
+}
+
+main {
+  padding: 4rem;
+  height: 100%;
+
+  .icons {
+    margin-top: 1rem;
+
+    a {
+      padding: 0.4rem;
+
+      &:hover {
+        color: $secondary-color;
+        @include easeOut;
+      }
+    }
+  }
+
+  &#home {
+    overflow: hidden; // no scroll bars on the page
+    h1 {
+      margin-top: 20vh; // viewport height (20 of 100 slices of height)
+    }
+  }
 }
