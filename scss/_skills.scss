@@ -1,0 +1,113 @@
+$a-color: #5A68A5;
+$b-color: #A55A5A;
+$c-color: #E67E22;
+$d-color: #62A55A;
+$e-color: #2C3E50;
+$f-color: #3498DB;
+$g-color: #5AA59B;
+
+$primary-mono-color: #3D3E41;
+$secondary-mono-color: #5E6066;
+
+.skills {
+  width: 100%;
+}
+
+.it-skills {
+  width: 100%;
+  // position: center;
+  // border: 3px solid blue;
+}
+
+.skill-matrix {
+  display: grid;
+  grid-gap: 3em;
+  grid-template-columns: 1fr 1fr;
+}
+
+.skill-entry {
+  display: grid;
+  grid-gap: 3px;
+  grid-template-columns: 1fr 6fr; 
+  padding-bottom: 0.5rem;
+
+  .skill-name {
+    // border: 1px solid white;
+    padding-left: 1em;
+    font-weight: bold;
+    // color: $primary-color;
+
+    &.C {
+      background-color: darken($color: $a-color, $amount: 20);
+    }
+    &.Java {
+      background-color: darken($color: $b-color, $amount: 20);
+    }
+    &.JavaScript {
+      background-color: darken($color: $c-color, $amount: 20);
+    }
+    &.BASH {
+      background-color: darken($color: $d-color, $amount: 20);
+    }
+    &.Python {
+      background-color: darken($color: $e-color, $amount: 20);
+    }
+  }
+
+  .skill-level {
+    width: 100%;
+    .C {
+      background-color: $a-color;
+    }
+    .Java {
+      background-color: $b-color;
+    }
+    .JavaScript {
+      background-color: $c-color;
+    }
+    .BASH {
+      background-color: $d-color;
+    }
+    .Python {
+      background-color: $e-color;
+    }
+  }
+}
+
+.skill-category-title {
+  padding: 1rem 1rem
+}
+
+#level {
+  // width: 20%;
+  height: 100%;
+  text-align: left;
+  font-weight: bold;
+  color: $primary-color;
+  border-top-right-radius: 3%;
+  border-bottom-right-radius: 3%;
+  // margin: 1px
+
+  &.C-level {
+    width: 95%;
+    background-color: $a-color;
+    // border: 3px solid blue;
+  }
+  &.Java-level {
+    width: 83%;
+    background-color: $b-color;
+  }
+  &.JavaScript-level {
+    width: 60%;
+    background-color: $c-color;
+  }
+  &.BASH-level {
+    width: 63%;
+    background-color: $d-color;
+  }
+  &.Python-level {
+    width: 33%;
+    background-color: $e-color;
+  }
+}
+

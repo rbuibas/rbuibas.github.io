@@ -36,3 +36,23 @@ function toggleMenu() {
     showMenu = false;
   }
 }
+
+
+// progress bar
+
+
+function move() {
+  let width = 8;
+  const elem = document.getElementById("level");   
+  const id = setInterval(frame, 35);
+  function frame() {
+    if (width >= 100) {
+      clearInterval(id);
+      elem.innerHTML ='';
+    } else {
+      width++; 
+      elem.style.width = width + '%'; 
+      elem.innerHTML = width * 1  + '%';
+    }
+  }
+}

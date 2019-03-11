@@ -1,5 +1,6 @@
 @import "config";
 @import "menu";
+@import "skills";
 
 // box sizing property for all
 
@@ -89,7 +90,7 @@ main {
   grid-template-columns: repeat(3, 1fr);
 
 
-  .bio-image {
+  .bioimage {
     grid-area: bioimage;
     margin: auto;
     border-radius: 50%;

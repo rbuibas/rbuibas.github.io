@@ -129,6 +129,11 @@
     &:hover {
       color: $secondary-color;
     }
+
+    &.easteregg {
+      // color: darken($color: $primary-color, $amount: 5);
+      color: transparent;
+    }
   }
 }
 

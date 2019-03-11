@@ -1,0 +1,102 @@
+$serbian-color: rgba(13, 99, 186, 0.68);
+$romanian-color: rgb(187, 182, 11);
+$english-color: rgb(154, 13, 13);
+$french-color: rgb(62, 41, 130);
+$russian-color: rgba(179, 12, 12, 0.476);
+
+.language-skills {
+  width: 100%;
+}
+
+
+.skill-entry {
+  display: grid;
+  grid-gap: 3px;
+  // grid-template-areas:
+  // 'skillname skilllevel';
+  // grid-template-columns: 7% 100%;
+  grid-template-columns: 1fr 6fr; 
+  padding-bottom: 0.5rem;
+
+  .skill-name {
+    // border: 2px solid $secondary-color;
+    border-top-left-radius: 3px;
+    border-bottom-left-radius: 3px;
+    padding-left: 1em;
+    font-weight: bold;
+    // color: $primary-color;
+
+    &.Serbian {
+      background-color: darken($color: $serbian-color, $amount: 20);
+    }
+    &.Romanian {
+      background-color: darken($color: $romanian-color, $amount: 20);
+    }
+    &.English {
+      background-color: darken($color: $english-color, $amount: 20);
+    }
+    &.French {
+      background-color: darken($color: $french-color, $amount: 20);
+    }
+    &.Russian {
+      background-color: darken($color: $russian-color, $amount: 20);
+    }
+  }
+
+  .skill-level {
+    width: 100%;
+    .Serbian {
+      background-color: $serbian-color;
+    }
+    .Romanian {
+      background-color: $romanian-color;
+    }
+    .English {
+      background-color: $english-color;
+    }
+    .French {
+      background-color: $french-color;
+    }
+    .Russian {
+      background-color: $russian-color;
+    }
+  }
+}
+
+.skill-category-title {
+  padding: 1rem 1rem
+}
+
+#level {
+  // width: 20%;
+  height: 100%;
+  text-align: left;
+  font-weight: bold;
+  color: $primary-color;
+  border-top-right-radius: 3%;
+  border-bottom-right-radius: 3%;
+  // margin: 1px
+
+  &.Serbian-level {
+    width: 95%;
+    background-color: $serbian-color;
+    // border: 3px solid blue;
+  }
+  &.Romanian-level {
+    width: 92%;
+    background-color: $romanian-color;
+  }
+  &.English-level {
+    width: 90%;
+    background-color: $english-color;
+  }
+  &.French-level {
+    width: 42%;
+    background-color: $french-color;
+  }
+  &.Russian-level {
+    width: 33%;
+    background-color: $russian-color;
+  }
+}
+
