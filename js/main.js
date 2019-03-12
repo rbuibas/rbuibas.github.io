@@ -36,3 +36,64 @@ function toggleMenu() {
     showMenu = false;
   }
 }
+
+// =============== jQuery ===============
+
+// skills level set up
+
+const skillLevels = {
+  // spoken
+  serbian: 95,
+  romanian: 99,
+  english: 90,
+  french: 30,
+  russian: 27,
+
+  // programming
+  c: 90,
+  java: 80,
+  js: 60,
+  bash: 66,
+  python: 30
+};
+
+$('.skill-entry').each(function () {
+  $('.level', this).css('width', skillLevels[$(this).attr('id')] + '%');
+});
+
+// skills animations
+$('.skills').mouseenter(function () {
+  $('.skill-entry', this).each(function () {
+    $('.skill-name', this).addClass('colorify-' + $(this).attr('id') + '-name');
+    $('.level', this).addClass('colorify-' + $(this).attr('id') + '-level');
+  });
+});
+
+$('.skills').mouseleave(function () {
+  $('.skill-entry', this).each(function () {
+    $('.skill-name', this).removeClass('colorify-' + $(this).attr('id') + '-name');
+    $('.level', this).removeClass('colorify-' + $(this).attr('id') + '-level');
+  });
+});
+
+
+// expand button logic
+$('#p-language-expand').click(function () {
+  if ($('#programming-matrix').is(':hidden')) {
+    $('#programming-matrix').children().fadeIn(500);
+    $('#programming-matrix').fadeIn(500);
+  } else {
+    $('#programming-matrix').children().fadeOut(500);
+    $('#programming-matrix').fadeOut(500);
+  }
+})
+
+$('#s-language-expand').click(function () {
+  if ($('#language-matrix').is(':hidden')) {
+    $('#language-matrix').children().fadeIn(500);
+    $('#language-matrix').fadeIn(500);
+  } else {
+    $('#language-matrix').children().fadeOut(500);
+    $('#language-matrix').fadeOut(500);
+  }
+})
