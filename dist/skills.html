@@ -39,106 +39,119 @@
           <a href="contact.html" class="nav-link">How to reach me</a>
         </li>
         <li class="nav-item easteregg">
-          <a href="it-skills.html" class="nav-link easteregg">Easter egg</a>
+          <a href="skills.html" class="nav-link easteregg">Easter egg</a>
         </li>
       </ul>
     </nav>
   </header>
   <main>
     <h1 class="lg-heading">Sapiens <span class="text-secondary">Skills</span></h1>
-    <div class="skill-matrix">
-      <div class="it-skills">
+    <div class="skills">
+      <div class="dropdown-skills">
         <h2 class="sm-heading">Programming Languages</h2>
-        <div class="skill-entry">
-          <div class="skill-name C">
+        <div id="p-language-expand" class="expand-btn">
+          <div class="expand-line"></div>
+          <div class="expand-line"></div>
+        </div>
+      </div>
+      <div id="programming-matrix" class="skill-matrix">
+        <div id="c" class="skill-entry">
+          <div class="skill-name">
             C
           </div>
           <div class="skill-level">
-            <div id="level" class="C-level"></div>
+            <div class="level"></div>
           </div>
         </div>
-        <div class="skill-entry">
-          <div class="skill-name Java">
+        <div id="java" class="skill-entry">
+          <div class="skill-name">
             Java
           </div>
           <div class="skill-level">
-            <div id="level" class="Java-level"></div>
+            <div class="level"></div>
           </div>
         </div>
-        <div class="skill-entry">
-          <div class="skill-name JavaScript">
+        <div id="js" class="skill-entry">
+          <div class="skill-name">
             JavaScript
           </div>
           <div class="skill-level">
-            <div id="level" class="JavaScript-level"></div>
+            <div class="level"></div>
           </div>
         </div>
-        <div class="skill-entry">
-          <div class="skill-name BASH">
+        <div id="bash" class="skill-entry">
+          <div class="skill-name">
             BASH
           </div>
           <div class="skill-level">
-            <div id="level" class="BASH-level"></div>
+            <div class="level"></div>
           </div>
         </div>
-        <div class="skill-entry">
-          <div class="skill-name Python">
+        <div id="python" class="skill-entry">
+          <div class="skill-name">
             Python
           </div>
           <div class="skill-level">
-            <div id="level" class="Python-level"></div>
-          </div>
-        </div>
-
-        <button onclick="move()">Load</button>
-      </div>
-
-
-      <!-- Language Skills -->
-      <div class="it-skills">
-        <h2 class="sm-heading">Spoken Languages</h2>
-        <div class="skill-entry">
-          <div class="skill-name Serbian">
-            Serbian
-          </div>
-          <div class="skill-level">
-            <div id="level" class="Serbian-level"></div>
-          </div>
-        </div>
-        <div class="skill-entry">
-          <div class="skill-name Romanian">
-            Romanian
-          </div>
-          <div class="skill-level">
-            <div id="level" class="Romanian-level"></div>
-          </div>
-        </div>
-        <div class="skill-entry">
-          <div class="skill-name English">
-            English
-          </div>
-          <div class="skill-level">
-            <div id="level" class="English-level"></div>
-          </div>
-        </div>
-        <div class="skill-entry">
-          <div class="skill-name French">
-            French
-          </div>
-          <div class="skill-level">
-            <div id="level" class="French-level"></div>
-          </div>
-        </div>
-        <div class="skill-entry">
-          <div class="skill-name Russian">
-            Russian
-          </div>
-          <div class="skill-level">
-            <div id="level" class="Russian-level"></div>
+            <div class="level"></div>
           </div>
         </div>
 
         <!-- <button onclick="move()">Load</button> -->
+      </div>
+    </div>
+
+    <!-- Language Skills -->
+    <div class="skills">
+      <div class="dropdown-skills">
+        <h2 class="sm-heading">Spoken Languages</h2>
+        <div id="s-language-expand" class="expand-btn">
+          <div class="expand-line"></div>
+          <div class="expand-line"></div>
+        </div>
+      </div>
+      <div id="language-matrix" class="skill-matrix">
+        <div id="serbian" class="skill-entry">
+          <div class="skill-name">
+            Serbian
+          </div>
+          <div class="skill-level">
+            <div class="level"></div>
+          </div>
+        </div>
+        <div id="romanian" class="skill-entry">
+          <div class="skill-name">
+            Romanian
+          </div>
+          <div class="skill-level">
+            <div class="level"></div>
+          </div>
+        </div>
+        <div id="english" class="skill-entry">
+          <div class="skill-name">
+            English
+          </div>
+          <div class="skill-level">
+            <div class="level"></div>
+          </div>
+        </div>
+        <div id="french" class="skill-entry">
+          <div class="skill-name">
+            French
+          </div>
+          <div class="skill-level">
+            <div class="level"></div>
+          </div>
+        </div>
+        <div id="russian" class="skill-entry">
+          <div class="skill-name">
+            Russian
+          </div>
+          <div class="skill-level">
+            <div class="level"></div>
+          </div>
+
+          <!-- <button id="magicButton">Load</button> -->
+        </div>
       </div>
     </div>
   </main>
@@ -147,6 +160,7 @@
     Copyright &copy; 2019
   </footer>
 
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="js/main.js"></script>
 </body>
 

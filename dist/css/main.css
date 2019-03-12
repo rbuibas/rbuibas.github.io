@@ -97,72 +97,103 @@
   transition-delay: 400ms; }
 
 .skills {
-  width: 100%; }
-
-.it-skills {
-  width: 100%; }
-
-.skill-matrix {
-  display: grid;
-  grid-gap: 3em;
-  grid-template-columns: 1fr 1fr; }
+  width: 100%;
+  padding: 1em; }
 
 .skill-entry {
   display: grid;
   grid-gap: 3px;
   grid-template-columns: 1fr 6fr;
   padding-bottom: 0.5rem; }
+  .skill-entry:nth-child(odd) .skill-name {
+    background-color: #5E6066; }
   .skill-entry .skill-name {
     padding-left: 1em;
-    font-weight: bold; }
-    .skill-entry .skill-name.C {
+    font-weight: bold;
+    background-color: #3D3E41;
+    border-top-left-radius: 3px;
+    border-bottom-left-radius: 3px;
+    opacity: 0.5;
+    transition: all 0.5s ease-out; }
+    .skill-entry .skill-name.colorify-serbian-name {
       background-color: #363e63; }
-    .skill-entry .skill-name.Java {
+    .skill-entry .skill-name.colorify-romanian-name {
       background-color: #633636; }
-    .skill-entry .skill-name.JavaScript {
+    .skill-entry .skill-name.colorify-english-name {
       background-color: #924d10; }
-    .skill-entry .skill-name.BASH {
+    .skill-entry .skill-name.colorify-french-name {
       background-color: #3b6336; }
-    .skill-entry .skill-name.Python {
+    .skill-entry .skill-name.colorify-russian-name {
       background-color: #080b0e; }
-  .skill-entry .skill-level {
-    width: 100%; }
-    .skill-entry .skill-level .C {
-      background-color: #5A68A5; }
-    .skill-entry .skill-level .Java {
-      background-color: #A55A5A; }
-    .skill-entry .skill-level .JavaScript {
-      background-color: #E67E22; }
-    .skill-entry .skill-level .BASH {
-      background-color: #62A55A; }
-    .skill-entry .skill-level .Python {
-      background-color: #2C3E50; }
+    .skill-entry .skill-name.colorify-c-name {
+      background-color: #363e63; }
+    .skill-entry .skill-name.colorify-java-name {
+      background-color: #633636; }
+    .skill-entry .skill-name.colorify-js-name {
+      background-color: #924d10; }
+    .skill-entry .skill-name.colorify-bash-name {
+      background-color: #3b6336; }
+    .skill-entry .skill-name.colorify-python-name {
+      background-color: #080b0e; }
+
+.skill-level {
+  width: 100%;
+  background-color: #2d2e31; }
 
 .skill-category-title {
   padding: 1rem 1rem; }
 
-#level {
+.level {
+  width: 5%;
   height: 100%;
   text-align: left;
   font-weight: bold;
   color: #161515;
-  border-top-right-radius: 3%;
-  border-bottom-right-radius: 3%; }
-  #level.C-level {
-    width: 95%;
+  background-color: #46474b;
+  border-top-right-radius: 3px;
+  border-bottom-right-radius: 3px;
+  transition: all 0.5s ease-out; }
+  .level.colorify-serbian-level {
     background-color: #5A68A5; }
-  #level.Java-level {
-    width: 83%;
+  .level.colorify-romanian-level {
     background-color: #A55A5A; }
-  #level.JavaScript-level {
-    width: 60%;
+  .level.colorify-english-level {
     background-color: #E67E22; }
-  #level.BASH-level {
-    width: 63%;
+  .level.colorify-french-level {
     background-color: #62A55A; }
-  #level.Python-level {
-    width: 33%;
+  .level.colorify-russian-level {
     background-color: #2C3E50; }
+  .level.colorify-c-level {
+    background-color: #5A68A5; }
+  .level.colorify-java-level {
+    background-color: #A55A5A; }
+  .level.colorify-js-level {
+    background-color: #E67E22; }
+  .level.colorify-bash-level {
+    background-color: #62A55A; }
+  .level.colorify-python-level {
+    background-color: #2C3E50; }
+
+.dropdown-skills {
+  display: grid;
+  grid-template-columns: 12fr 1fr; }
+
+.expand-btn {
+  margin-bottom: 2rem;
+  cursor: pointer;
+  transition: all 0.5s ease-out; }
+  .expand-btn .expand-line {
+    position: relative;
+    width: 3px;
+    height: 20px;
+    margin: 0 0 5px 0;
+    background: white; }
+    .expand-btn .expand-line:nth-child(1) {
+      background: #e66d09;
+      transform: rotate(-45deg) translate(0px, 30px); }
+    .expand-btn .expand-line:nth-child(2) {
+      background: #e66d09;
+      transform: rotate(45deg) translate(21px, -27px); }
 
 * {
   box-sizing: border-box; }
@@ -201,8 +232,7 @@ h3 {
   h2.sm-heading,
   h3.sm-heading {
     margin-bottom: 2rem;
-    padding: 0.2rem 1rem;
-    background: #1b1a1a; }
+    padding: 0.2rem 1rem; }
 
 a {
   color: white;
@@ -309,6 +339,10 @@ main {
   background: black;
   color: white;
   height: 60px; }
+
+main {
+  max-width: 1000px;
+  margin: auto; }
 
 @media screen and (min-width: 1171px) {
   .projects {

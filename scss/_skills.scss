@@ -6,108 +6,203 @@ $e-color: #2C3E50;
 $f-color: #3498DB;
 $g-color: #5AA59B;
 
+$serbian-color: $a-color;
+$romanian-color: $b-color;
+$english-color: $c-color;
+$french-color: $d-color;
+$russian-color: $e-color;
+
+$c-color: $a-color;
+$java-color: $b-color;
+// $js-color: $c-color;
+// wth, using c-color will get a-color on js !?
+$js-color: $english-color;
+$bash-color: $d-color;
+$python-color: $e-color;
+
 $primary-mono-color: #3D3E41;
 $secondary-mono-color: #5E6066;
 
 .skills {
   width: 100%;
-}
-
-.it-skills {
-  width: 100%;
-  // position: center;
-  // border: 3px solid blue;
-}
-
-.skill-matrix {
-  display: grid;
-  grid-gap: 3em;
-  grid-template-columns: 1fr 1fr;
+  padding: 1em;
 }
 
 .skill-entry {
   display: grid;
   grid-gap: 3px;
-  grid-template-columns: 1fr 6fr; 
+  grid-template-columns: 1fr 6fr;
   padding-bottom: 0.5rem;
 
+  &:nth-child(odd) {
+    .skill-name {
+      background-color: $secondary-mono-color;
+    }
+  }
+
   .skill-name {
-    // border: 1px solid white;
+    // -webkit-transition: all 0.5s ease;
+    // -moz-transition: all 0.5s ease;
+    // -o-transition: all 0.5s ease;
     padding-left: 1em;
     font-weight: bold;
-    // color: $primary-color;
+    background-color: $primary-mono-color;
+    border-top-left-radius: 3px;
+    border-bottom-left-radius: 3px;
+    opacity: 0.5;
 
-    &.C {
-      background-color: darken($color: $a-color, $amount: 20);
+    &.colorify-serbian-name {
+      background-color: darken($color: $serbian-color, $amount: 20);
     }
-    &.Java {
-      background-color: darken($color: $b-color, $amount: 20);
+
+    &.colorify-romanian-name {
+      background-color: darken($color: $romanian-color, $amount: 20);
     }
-    &.JavaScript {
+
+    &.colorify-english-name {
+      background-color: darken($color: $english-color, $amount: 20);
+    }
+
+    &.colorify-french-name {
+      background-color: darken($color: $french-color, $amount: 20);
+    }
+
+    &.colorify-russian-name {
+      background-color: darken($color: $russian-color, $amount: 20);
+    }
+
+    &.colorify-c-name {
       background-color: darken($color: $c-color, $amount: 20);
     }
-    &.BASH {
-      background-color: darken($color: $d-color, $amount: 20);
+
+    &.colorify-java-name {
+      background-color: darken($color: $java-color, $amount: 20);
     }
-    &.Python {
-      background-color: darken($color: $e-color, $amount: 20);
+
+    &.colorify-js-name {
+      background-color: darken($color: $js-color, $amount: 20);
     }
+
+    &.colorify-bash-name {
+      background-color: darken($color: $bash-color, $amount: 20);
+    }
+
+    &.colorify-python-name {
+      background-color: darken($color: $python-color, $amount: 20);
+    }
+
+    @include easeOut;
   }
 
-  .skill-level {
-    width: 100%;
-    .C {
-      background-color: $a-color;
-    }
-    .Java {
-      background-color: $b-color;
-    }
-    .JavaScript {
-      background-color: $c-color;
-    }
-    .BASH {
-      background-color: $d-color;
-    }
-    .Python {
-      background-color: $e-color;
-    }
-  }
+}
+
+.skill-level {
+  width: 100%;
+  background-color: darken($color: $secondary-mono-color, $amount: 20);
+}
+
+.skill-matrix {
+  // display: grid;
+  // grid-gap: 3em;
+  // grid-template-columns: 1fr;
 }
 
 .skill-category-title {
   padding: 1rem 1rem
 }
 
-#level {
-  // width: 20%;
+.level {
+  // -webkit-transition: all 0.5s ease;
+  // -moz-transition: all 0.5s ease;
+  // -o-transition: all 0.5s ease;
+  width: 5%;
   height: 100%;
   text-align: left;
   font-weight: bold;
   color: $primary-color;
-  border-top-right-radius: 3%;
-  border-bottom-right-radius: 3%;
-  // margin: 1px
+  // background-color: darken($color: $secondary-color, $amount: 20);
+  background-color: darken($color: $secondary-mono-color, $amount: 10);
+  border-top-right-radius: 3px;
+  border-bottom-right-radius: 3px;
 
-  &.C-level {
-    width: 95%;
-    background-color: $a-color;
-    // border: 3px solid blue;
+  &.colorify-serbian-level {
+    background-color: $serbian-color;
   }
-  &.Java-level {
-    width: 83%;
-    background-color: $b-color;
+
+  &.colorify-romanian-level {
+    background-color: $romanian-color;
   }
-  &.JavaScript-level {
-    width: 60%;
+
+  &.colorify-english-level {
+    background-color: $english-color;
+  }
+
+  &.colorify-french-level {
+    background-color: $french-color;
+  }
+
+  &.colorify-russian-level {
+    background-color: $russian-color;
+  }
+
+  &.colorify-c-level {
     background-color: $c-color;
   }
-  &.BASH-level {
-    width: 63%;
-    background-color: $d-color;
+
+  &.colorify-java-level {
+    background-color: $java-color;
   }
-  &.Python-level {
-    width: 33%;
-    background-color: $e-color;
+
+  &.colorify-js-level {
+    background-color: $js-color;
   }
+
+  &.colorify-bash-level {
+    background-color: $bash-color;
+  }
+
+  &.colorify-python-level {
+    background-color: $python-color;
+  }
+
+  @include easeOut;
 }
 
+.dropdown-skills {
+  display: grid;
+  grid-template-columns: 12fr 1fr;
+}
+
+.expand-btn {
+  margin-bottom: 2rem;
+  // position: relative;
+  // z-index: 3; // higher is on top
+  // right: 50%;
+  // top: 50%;
+  // float: right;
+  cursor: pointer;
+  @include easeOut;
+
+  .expand-line {
+    position: relative;
+    // left: 19px;
+    // top: 15px;
+    width: 3px;
+    height: 20px;
+    margin: 0 0 5px 0;
+    background: set-text-color($primary-color);
+    // @include easeOut;
+
+    // Line 1 - Rotate
+    &:nth-child(1) {
+      background: $secondary-color;
+      transform: rotate(-45deg) translate(0px, 30px);
+    }
+
+    // Line 1 - Rotate
+    &:nth-child(2) {
+      background: $secondary-color;
+      transform: rotate(45deg) translate(21px, -27px);
+    }
+  }
+}

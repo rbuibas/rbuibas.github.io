@@ -37,22 +37,63 @@ function toggleMenu() {
   }
 }
 
+// =============== jQuery ===============
 
-// progress bar
+// skills level set up
+
+const skillLevels = {
+  // spoken
+  serbian: 95,
+  romanian: 99,
+  english: 90,
+  french: 30,
+  russian: 27,
+
+  // programming
+  c: 90,
+  java: 80,
+  js: 60,
+  bash: 66,
+  python: 30
+};
+
+$('.skill-entry').each(function () {
+  $('.level', this).css('width', skillLevels[$(this).attr('id')] + '%');
+});
+
+// skills animations
+$('.skills').mouseenter(function () {
+  $('.skill-entry', this).each(function () {
+    $('.skill-name', this).addClass('colorify-' + $(this).attr('id') + '-name');
+    $('.level', this).addClass('colorify-' + $(this).attr('id') + '-level');
+  });
+});
+
+$('.skills').mouseleave(function () {
+  $('.skill-entry', this).each(function () {
+    $('.skill-name', this).removeClass('colorify-' + $(this).attr('id') + '-name');
+    $('.level', this).removeClass('colorify-' + $(this).attr('id') + '-level');
+  });
+});
 
 
-function move() {
-  let width = 8;
-  const elem = document.getElementById("level");   
-  const id = setInterval(frame, 35);
-  function frame() {
-    if (width >= 100) {
-      clearInterval(id);
-      elem.innerHTML ='';
-    } else {
-      width++; 
-      elem.style.width = width + '%'; 
-      elem.innerHTML = width * 1  + '%';
-    }
+// expand button logic
+$('#p-language-expand').click(function () {
+  if ($('#programming-matrix').is(':hidden')) {
+    $('#programming-matrix').children().fadeIn(500);
+    $('#programming-matrix').fadeIn(500);
+  } else {
+    $('#programming-matrix').children().fadeOut(500);
+    $('#programming-matrix').fadeOut(500);
   }
-}
+})
+
+$('#s-language-expand').click(function () {
+  if ($('#language-matrix').is(':hidden')) {
+    $('#language-matrix').children().fadeIn(500);
+    $('#language-matrix').fadeIn(500);
+  } else {
+    $('#language-matrix').children().fadeOut(500);
+    $('#language-matrix').fadeOut(500);
+  }
+})

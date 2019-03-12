@@ -34,7 +34,7 @@ h3 {
   &.sm-heading {
     margin-bottom: 2rem;
     padding: 0.2rem 1rem;
-    background: lighten($color: $primary-color, $amount: 2); // should add rgba() function and opacity when there will be an imagel later
+    // background: lighten($color: $primary-color, $amount: 2); // should add rgba() function and opacity when there will be an imagel later
   }
 }
 
@@ -199,6 +199,11 @@ main {
   background: darken($color: $primary-color, $amount: 10);
   color: set-text-color($primary-color);
   height: 60px;
+}
+
+main {
+  max-width: 1000px;
+  margin: auto;
 }
 
 @import "mobile";
