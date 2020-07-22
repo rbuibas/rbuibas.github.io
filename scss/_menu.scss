@@ -6,14 +6,14 @@
   right: 35px;
   top: 35px;
   cursor: pointer;
-  @include easeOut;
+  @include easeOutCirc;
 
   .btn-line {
     width: 28px;
     height: 3px;
     margin: 0 0 5px 0;
     background: set-text-color($primary-color);
-    @include easeOut;
+    @include easeOutCirc;
   }
 
   // Rotate into X with Menu Lines
@@ -68,7 +68,7 @@
 
   &-branding {
     background: $primary-color;
-    @include easeOut;
+    @include easeOutCirc;
     transform: translate3d(0, 100%, 0);
 
     &.show {
@@ -93,7 +93,8 @@
     background: darken($color: $primary-color, $amount: 5);
     list-style: none;
     transform: translate3d(0, -100%, 0);
-    @include easeOut;
+    /*@include easeOut;*/
+    @include easeOutCirc;
 
     &.show {
       // slide in from top
@@ -124,10 +125,11 @@
     font-weight: 300;
     color: set-text-color($primary-color);
     text-decoration: none;
-    @include easeOut;
+    /*animation: custom-easeOutBounce 3s;*/
 
     &:hover {
       color: $secondary-color;
+      @include easeOut;
     }
 
     &.easteregg {
@@ -138,7 +140,7 @@
 }
 
 // Delay each nav item slide by 0.1s
-@for $i from 1 to 5 {
+@for $i from 1 to 6 {
   .nav-item:nth-child(#{$i}) {
     transition-delay: $i * 100ms;
   }

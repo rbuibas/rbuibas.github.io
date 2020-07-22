@@ -4,11 +4,14 @@
 
 // box sizing property for all
 
+
 * {
   box-sizing: border-box;
 }
 
 body {
+  // get the colors into a CSS variable
+  /*--primary-color: $primary-color;*/
   @include background;
   background: $primary-color;
   color: set-text-color($primary-color);
@@ -78,6 +81,26 @@ main {
     h1 {
       margin-top: 20vh; // viewport height (20 of 100 slices of height)
     }
+  }
+}
+
+.first-name, .last-name, .contact {
+  cursor: pointer;
+  &:hover {
+    opacity: 0.5;
+    border-color: $secondary-color;
+    @include easeOut;
+  }
+}
+
+.headline {
+  cursor: pointer;
+  &:hover {
+    /*opacity: 0.5;*/
+    border-color: $primary-color;
+    color: $secondary-color;
+    transition: color 0.5s ease-in-out;
+    /*@include easeOut;*/
   }
 }
 

@@ -6,6 +6,15 @@ const menuNav = document.querySelector('.menu-nav');
 const menuBranding = document.querySelector('.menu-branding');
 const navItems = document.querySelectorAll('.nav-item');
 
+const firstName = document.querySelector('.first-name');
+const surName = document.querySelector('.last-name');
+
+// experimental - I can click on any span
+const spans = document.getElementsByTagName('span');
+for(i=0;i<spans.length;i++) {
+  spans[i].onclick=toggleMenu;
+}
+
 // Set initial state of menu
 
 let showMenu = false;
@@ -13,6 +22,8 @@ let showMenu = false;
 // need an event listener
 
 menuBtn.addEventListener('click', toggleMenu);
+// firstName.addEventListener('click', toggleMenu);
+// surName.addEventListener('click', toggleMenu);
 
 function toggleMenu() {
   console.log('Sandbox sanity test')
@@ -46,7 +57,7 @@ const skillLevels = {
   serbian: 95,
   romanian: 99,
   english: 90,
-  french: 30,
+  french: 60,
   russian: 27,
 
   // programming
