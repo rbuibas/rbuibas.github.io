@@ -69,42 +69,60 @@ const skillLevels = {
 };
 
 $('.skill-entry').each(function () {
-  $('.level', this).css('width', skillLevels[$(this).attr('id')] + '%');
+  $(this).find('.level').css('width', skillLevels[this.id] + '%');
 });
 
 // skills animations
-$('.skills').mouseenter(function () {
-  $('.skill-entry', this).each(function () {
-    $('.skill-name', this).addClass('colorify-' + $(this).attr('id') + '-name');
-    $('.level', this).addClass('colorify-' + $(this).attr('id') + '-level');
+$('.skills').on('mouseenter', function () {
+  $(this).find('.skill-entry').each(function () {
+    $(this).find('.skill-name').addClass('colorify-' + this.id + '-name');
+    $(this).find('.level').addClass('colorify-' + this.id + '-level');
   });
 });
 
-$('.skills').mouseleave(function () {
-  $('.skill-entry', this).each(function () {
-    $('.skill-name', this).removeClass('colorify-' + $(this).attr('id') + '-name');
-    $('.level', this).removeClass('colorify-' + $(this).attr('id') + '-level');
+$('.skills').on('mouseleave', function () {
+  $(this).find('.skill-entry').each(function () {
+    $(this).find('.skill-name').removeClass('colorify-' + this.id + '-name');
+    $(this).find('.level').removeClass('colorify-' + this.id + '-level');
   });
 });
 
 
 // expand button logic
-$('#p-language-expand').click(function () {
-  if ($('#programming-matrix').is(':hidden')) {
-    $('#programming-matrix').children().fadeIn(500);
-    $('#programming-matrix').fadeIn(500);
+$('#p-language-expand').on('click', function () {
+  const programmingMatrix = $('#programming-matrix');
+  if (programmingMatrix.is(':hidden')) {
+    programmingMatrix.children().fadeIn(500);
+    programmingMatrix.fadeIn(500);
   } else {
-    $('#programming-matrix').children().fadeOut(500);
-    $('#programming-matrix').fadeOut(500);
+    programmingMatrix.children().fadeOut(500);
+    programmingMatrix.fadeOut(500);
   }
-})
+});
 
-$('#s-language-expand').click(function () {
-  if ($('#language-matrix').is(':hidden')) {
-    $('#language-matrix').children().fadeIn(500);
-    $('#language-matrix').fadeIn(500);
+$('#s-language-expand').on('click', function () {
+  const languageMatrix = $('#language-matrix');
+  if (languageMatrix.is(':hidden')) {
+    languageMatrix.children().fadeIn(500);
+    languageMatrix.fadeIn(500);
   } else {
-    $('#language-matrix').children().fadeOut(500);
-    $('#language-matrix').fadeOut(500);
+    languageMatrix.children().fadeOut(500);
+    languageMatrix.fadeOut(500);
   }
-})
+});
+
+// Update copyright year automatically - direct approach
+document.addEventListener('DOMContentLoaded', function() {
+  console.log("DOMContentLoaded event fired");
+  const footers = document.querySelectorAll('#main-footer');
+  console.log("Found footers:", footers.length);
+  
+  if (footers.length > 0) {
+    const currentYear = new Date().getFullYear();
+    console.log("Setting year to:", currentYear);
+    
+    footers.forEach(function(footer) {
+      footer.innerHTML = `Copyright &copy; ${currentYear}`;
+    });
+  }
+});

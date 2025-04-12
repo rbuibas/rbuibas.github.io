@@ -6,14 +6,18 @@
   "homepage": "https://github.com/rbuibas/portfolio",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "sass": "node-sass -w scss/ -o dist/css/",
-    "deploy": "gh-pages -d dist"
+    "sass": "sass --watch scss/:dist/css/",
+    "deploy": "gh-pages -d dist",
+    "start": "http-server dist"
   },
   "author": "Raul Buibas",
   "license": "MIT",
   "dependencies": {
-    "gh-pages": "^2.0.1",
-    "jquery": "^3.5.1",
-    "node-sass": "^4.12.0"
+    "gh-pages": "^6.1.1",
+    "jquery": "^3.7.1"
+  },
+  "devDependencies": {
+    "sass": "^1.69.5",
+    "http-server": "^14.1.1"
   }
 }
